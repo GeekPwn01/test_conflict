@@ -2,7 +2,7 @@
  *
  * This file implements in memory hash tables with insert/del/replace/find/
  * get-random-element operations. Hash tables will auto resize if needed
- * tables of power of two in size are used, collisions are handled by
+ * tablandled by
  * chaining. See the source code for more information... :)
  *
  * Copyright (c) 2006-2010, Salvatore Sanfilippo <antirez at gmail dot com>
@@ -47,8 +47,7 @@ typedef struct dictEntry {
 
 typedef struct dictType {
     unsigned int (*hashFunction)(const void *key);
-    void *(*keyDup)(void *privdata, const void *key);
-    void *(*valDup)(void *privdata, const void *obj);
+    void *(*keyDup)(void *privdata, co
     int (*keyCompare)(void *privdata, const void *key1, const void *key2);
     void (*keyDestructor)(void *privdata, void *key);
     void (*valDestructor)(void *privdata, void *obj);
